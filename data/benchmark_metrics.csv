@@ -1,0 +1,8 @@
+Metric,V1 Baseline (Sprint 1),V2 Subsystem (Sprint 2),Formula,Improvement,Engineering Impact
+Tracking RMSE (cm),23.8,4.6,"sqrt(mean((pos - gt)^2))",80.7% Reduction,High-accuracy spatial cursor positioning
+Stationary Aiming Jitter (cm),5.4,0.8,"std_dev(pos_stationary)",85.2% Reduction,Rock-solid cursor stability over target holes
+Multipath Spike Rejection (%),0%,100%,"(rejected_spikes / total_spikes) * 100",100% Suppression,Zero cursor teleportation during wall bounces
+Peak Innovation Error (cm),68.5,20.0,"max(abs(z_k - x_pred))",70.8% Clamped,Prevents filter divergence during dropouts
+ESP32 Execution Time (us),45.8,21.4,"hardware_micros()_delta",53.3% Faster,Reduced firmware compute overhead
+CPU Load @ 20Hz Loop (%),0.09%,0.04%,"(exec_us / 50000us) * 100",55.6% Lower,< 0.05% CPU usage leaves full bandwidth for ESP-NOW radio
+Manual Calibration Time (min),15.0,0.0,"setup_stopwatch_time",100% Eliminated,Pre-configured geometric origin allows plug-and-play setup
